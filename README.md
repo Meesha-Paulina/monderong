@@ -1,2 +1,2 @@
 # Monderong
-A text-based adventure
+A text-based adventure for Android.
