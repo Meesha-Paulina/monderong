@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigationFragment"
+    app:startDestination="@id/mainMenuFragment">
+
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="cz.ludogry.textadventures.monderong.navigation.MainMenuFragment"
+        android:label="MainMenuFragment" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_roomsFragment"
+            app:destination="@id/roomsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomsFragment"
+        android:name="cz.ludogry.textadventures.monderong.navigation.RoomsFragment"
+        android:label="RoomsFragment" >
+        <action
+            android:id="@+id/action_roomsFragment_to_victoryFragment"
+            app:destination="@id/victoryFragment" />
+        <action
+            android:id="@+id/action_roomsFragment_to_gameOverFragment"
+            app:destination="@id/gameOverFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/victoryFragment"
+        android:name="cz.ludogry.textadventures.monderong.navigation.VictoryFragment"
+        android:label="VictoryFragment" >
+        <action
+            android:id="@+id/action_victoryFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOverFragment"
+        android:name="cz.ludogry.textadventures.monderong.navigation.GameOverFragment"
+        android:label="GameOverFragment" >
+        <action
+            android:id="@+id/action_gameOverFragment_to_roomsFragment"
+            app:destination="@id/roomsFragment" />
+        <action
+            android:id="@+id/action_gameOverFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+</navigation>

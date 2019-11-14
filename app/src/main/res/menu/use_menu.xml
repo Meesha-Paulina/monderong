@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/use_nothing"
+        android:title="@string/useNothing"/>
+    <item
+        android:id="@+id/use_torch"
+        android:title="@string/torch" />
+    <item
+        android:id="@+id/use_firelock"
+        android:title="@string/firelock"/>
+    <item
+        android:id="@+id/use_flaming_torch"
+        android:title="@string/flamingTorch"/>
+    <item
+        android:id="@+id/use_sword"
+        android:title="@string/sword" />
+</menu>

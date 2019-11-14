@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/pick_nothing"
+        android:title="@string/pickNothing"/>
+    <item
+        android:id="@+id/pick_torch"
+        android:title="@string/torch" />
+    <item
+        android:id="@+id/pick_firelock"
+        android:title="@string/firelock"/>
+    <item
+        android:id="@+id/pick_sword"
+        android:title="@string/sword" />
+    <item
+        android:id="@+id/pick_treasure"
+        android:title="@string/treasure" />
+</menu>

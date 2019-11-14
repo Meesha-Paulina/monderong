@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rooms_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/roomCaption"
+            style="@style/roomCaption"
+            android:text="Forest"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/north"
+            style="@style/roomButton"
+            android:text="@string/north"
+            app:layout_constraintBottom_toTopOf="@+id/roomImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/roomCaption" />
+
+        <Button
+            android:id="@+id/east"
+            style="@style/roomButton"
+            android:text="@string/east"
+            app:layout_constraintBottom_toBottomOf="@+id/roomImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/roomImage"
+            app:layout_constraintTop_toTopOf="@+id/roomImage" />
+
+        <Button
+            android:id="@+id/west"
+            style="@style/roomButton"
+            android:text="@string/west"
+            app:layout_constraintEnd_toStartOf="@id/roomImage"
+            app:layout_constraintBottom_toBottomOf="@+id/roomImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/roomImage" />
+
+        <Button
+            android:id="@+id/south"
+            style="@style/roomButton"
+            android:text="@string/south"
+            app:layout_constraintTop_toBottomOf="@id/roomImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/roomDescription"
+            tools:layout_editor_absoluteY="304dp" />
+
+        <ImageView
+            android:id="@+id/roomImage"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:contentDescription="@string/roomIllustration"
+            app:layout_constraintBottom_toTopOf="@+id/south"
+            app:layout_constraintEnd_toStartOf="@+id/east"
+            app:layout_constraintStart_toEndOf="@+id/west"
+            app:layout_constraintTop_toBottomOf="@id/north"
+            app:srcCompat="@drawable/talir" />
+
+        <TextView
+            android:id="@+id/roomDescription"
+            style="@style/roomDescription"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/pick"
+            app:layout_constraintTop_toBottomOf="@+id/south" />
+
+        <Button
+            android:id="@+id/pick"
+            style="@style/roomButton"
+            android:text="@string/pick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/use"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/roomDescription" />
+
+        <Button
+            android:id="@+id/use"
+            style="@style/roomButton"
+            android:text="@string/use"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/pick"
+            app:layout_constraintTop_toBottomOf="@+id/roomDescription"
+            android:onClick="useMenu"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

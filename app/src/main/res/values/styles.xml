@@ -1,0 +1,60 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="menuHeader">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:background">@android:color/holo_blue_bright</item>
+        <item name="android:fontFamily">@font/caesar_dressing</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="menuButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:background">@android:color/holo_orange_light</item>
+        <item name="android:fontFamily">@font/caesar_dressing</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="roomCaption">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/holo_blue_bright</item>
+        <item name="android:fontFamily">@font/caesar_dressing</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">36dp</item>
+    </style>
+
+    <style name="roomButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/holo_orange_light</item>
+        <item name="android:fontFamily">@font/caesar_dressing</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="roomDescription">
+        <item name="android:fontFamily">@font/caesar_dressing</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+
+</resources>
