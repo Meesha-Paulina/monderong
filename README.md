@@ -1,2 +1,2 @@
-# monderong
+# Monderong
 A text-based adventure
