@@ -15,7 +15,6 @@
         <TextView
             android:id="@+id/roomCaption"
             style="@style/roomCaption"
-            android:text="Forest"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -71,7 +70,6 @@
         <TextView
             android:id="@+id/roomDescription"
             style="@style/roomDescription"
-            android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@id/pick"
@@ -93,8 +91,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/pick"
-            app:layout_constraintTop_toBottomOf="@+id/roomDescription"
-            android:onClick="useMenu"/>
+            app:layout_constraintTop_toBottomOf="@+id/roomDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

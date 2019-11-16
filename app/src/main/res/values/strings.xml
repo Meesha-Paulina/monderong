@@ -21,6 +21,7 @@
 
     <!-- game end -->
     <string name="victory">Victory!</string>
+    <string name="youWon">YOU WON!!</string>
     <string name="backToMenu">Back to main menu</string>
     <string name="victoryImage">Image of your victory.</string>
     <string name="gameOver">Game over!</string>
