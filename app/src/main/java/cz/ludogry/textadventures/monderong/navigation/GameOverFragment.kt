@@ -7,8 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 
 import cz.ludogry.textadventures.monderong.R
+import cz.ludogry.textadventures.monderong.databinding.FragmentGameOverBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,6 +32,8 @@ class GameOverFragment : Fragment() {
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
 
+    private lateinit var binding: FragmentGameOverBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -41,8 +46,18 @@ class GameOverFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_game_over, container, false)
+        binding = DataBindingUtil
+            .inflate(inflater, R.layout.fragment_game_over, container, false)
+
+        binding.backToMenu.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_gameOverFragment_to_mainMenuFragment)
+        )
+
+        binding.restartGame.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_gameOverFragment_to_roomsFragment)
+        )
+
+        return binding.root
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -50,14 +65,14 @@ class GameOverFragment : Fragment() {
         listener?.onFragmentInteraction(uri)
     }
 
-    override fun onAttach(context: Context) {
+   /* override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is OnFragmentInteractionListener) {
             listener = context
         } else {
             throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
-    }
+    }*/
 
     override fun onDetach() {
         super.onDetach()

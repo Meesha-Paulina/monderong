@@ -25,6 +25,7 @@
     <string name="backToMenu">Back to main menu</string>
     <string name="victoryImage">Image of your victory.</string>
     <string name="gameOver">Game over!</string>
+    <string name="youLost">The dragon killed you!</string>
     <string name="restartGame">Restart game</string>
     <string name="torch">Torch</string>
     <string name="firelock">Firelock</string>

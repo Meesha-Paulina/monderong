@@ -47,7 +47,6 @@ class VictoryFragment : Fragment() {
         binding = DataBindingUtil
             .inflate(inflater, R.layout.fragment_victory, container, false)
 
-        binding.victoryDescription.text = getString(R.string.youWon)
         binding.backToMenu.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_victoryFragment_to_mainMenuFragment)
         )
