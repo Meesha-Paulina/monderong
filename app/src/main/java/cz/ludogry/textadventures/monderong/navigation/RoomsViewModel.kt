@@ -1,5 +1,6 @@
 package cz.ludogry.textadventures.monderong.navigation
 
+import android.content.Context
 import android.view.MenuItem
 import androidx.lifecycle.ViewModel
 import cz.ludogry.textadventures.monderong.R
@@ -12,10 +13,10 @@ class RoomsViewModel : ViewModel(){
     private var rooms = MonderongRooms()
     var items: HashSet<Item> = HashSet()
 
-    var currentRoom : Room
+    var currentRoom : Room = Room()
 
-    init {
-       currentRoom  = rooms.initRooms()
+    fun initRooms(context: Context) {
+        currentRoom  = rooms.initRooms(context)
     }
 
     fun north(): Boolean {

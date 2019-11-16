@@ -10,7 +10,7 @@
     <string name="exit">Exit</string>
     <string name="options">Options</string>
 
-    <!-- rooms -->
+    <!-- room fragment -->
     <string name="north">North</string>
     <string name="south">South</string>
     <string name="west">West</string>
@@ -27,6 +27,8 @@
     <string name="gameOver">Game over!</string>
     <string name="youLost">The dragon killed you!</string>
     <string name="restartGame">Restart game</string>
+
+    <!-- items -->
     <string name="torch">Torch</string>
     <string name="firelock">Firelock</string>
     <string name="pickNothing">There is nothing</string>
@@ -34,5 +36,34 @@
     <string name="treasure">Treasure</string>
     <string name="useNothing">You have nothing</string>
     <string name="flamingTorch">Flaming torch</string>
+
+    <!-- rooms and their descriptions-->
+    <string name="forest">Forest</string>
+    <string name="startDescription">It\'s a very dark night. You are in the middle of a forest.</string>
+    <string name="uninterestingPlace">Uninteresting place</string>
+    <string name="uninterestingDescription">This is totally uninteresting place.</string>
+    <string name="caveEntrance">Cave entrance</string>
+    <string name="scaryForestDescription">This forest is scary.</string>
+    <string name="entranceDescription">This is the entrance to the legendary Great Cave of Monderong. You are scared to go in without a light.</string>
+    <string name="cave">Cave</string>
+    <string name="firstCaveDescription">The cave does not look quite as interesting as you imagined.</string>
+    <string name="crossroad">Crossroad</string>
+    <string name="crossroadDescription">You find yourself on a crossroad. Strange smell and noise comes from a hall in the north.</string>
+    <string name="dragon">Dragon!</string>
+    <string name="dragonDescription">Prepare for a battle, the dragon noticed you and wants to fight!</string>
+    <string name="deadDragon">Dead dragon</string>
+    <string name="deadDragonDescription">The body of the dragon lies on the hall\'s floor.</string>
+    <string name="stinkyCave">Stinky cave</string>
+    <string name="stinkyCaveDescription">The awful smell of the dead dragon reminds you of the glorious battle.</string>
+    <string name="closeCaveDescription">You are getting closer to the mystical treasure of Monderong.</string>
+    <string name="anotherForestDescription">Forest. A tree. And another. What would you expect, it\'s a forest.</string>
+    <string name="armory">Armory</string>
+    <string name="armoryDescription">Small room with a bunch of weapons.</string>
+    <string name="treasureRoom">Treasure room</string>
+    <string name="treasureDescription">Finally! There is the ancient treasure, let\'s get it to a museum.</string>
+    <string name="caveVictoryDescription">You can already feel the sensation of victory.</string>
+    <string name="meadow">Meadow</string>
+    <string name="meadowDescription">Small meadow.</string>
+    <string name="lostForestDescription">You are kinda lost in this forest, aren\'t you?</string>
 
 </resources>

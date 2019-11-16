@@ -34,39 +34,20 @@
             android:id="@+id/startButton"
             style="@style/menuButton"
             android:text="@string/start"
-            app:layout_constraintBottom_toTopOf="@+id/buttonLoad"
+            app:layout_constraintBottom_toTopOf="@+id/buttonHelp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/menuImage" />
 
         <Button
-            android:id="@+id/buttonLoad"
-            style="@style/menuButton"
-            android:text="@string/load"
-            app:layout_constraintBottom_toTopOf="@+id/buttonHelp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/startButton" />
-
-        <Button
             android:id="@+id/buttonHelp"
             style="@style/menuButton"
             android:text="@string/help"
-            app:layout_constraintBottom_toTopOf="@+id/buttonOptions"
+            app:layout_constraintBottom_toTopOf="@+id/startButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonLoad"
+            app:layout_constraintTop_toBottomOf="@+id/buttonExit"
             tools:layout_editor_absoluteX="177dp" />
-
-        <Button
-            android:id="@+id/buttonOptions"
-            style="@style/menuButton"
-            android:text="@string/options"
-            app:layout_constraintBottom_toTopOf="@+id/buttonExit"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonHelp"
-            tools:layout_editor_absoluteX="158dp" />
 
         <Button
             android:id="@+id/buttonExit"
@@ -75,7 +56,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonOptions"
+            app:layout_constraintTop_toBottomOf="@+id/buttonHelp"
             tools:layout_editor_absoluteX="194dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

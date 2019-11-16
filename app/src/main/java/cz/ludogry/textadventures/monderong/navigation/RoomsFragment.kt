@@ -53,6 +53,7 @@ class RoomsFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(RoomsViewModel::class.java)
+        viewModel.initRooms(this.requireContext())
 
         roomChange()
 
