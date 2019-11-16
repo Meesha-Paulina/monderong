@@ -130,7 +130,10 @@ class MonderongRooms {
     }
 
     fun killedDragon(): Room {
-        return rooms[6]
+        val killedDragonRoom = rooms[6]
+        killedDragonRoom.south?.north = killedDragonRoom
+        killedDragonRoom.north?.south = killedDragonRoom
+        return killedDragonRoom
     }
 
 

@@ -78,8 +78,6 @@ class RoomsViewModel : ViewModel(){
             }
         } else if (p0?.itemId == R.id.use_sword) {
             if (currentRoom.roomName == "Dragon!") {
-                currentRoom.north?.south = rooms.killedDragon()
-                currentRoom.south?.north = rooms.killedDragon()
                 currentRoom = rooms.killedDragon()
             }
         }
