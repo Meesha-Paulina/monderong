@@ -55,32 +55,32 @@ class RoomsViewModel : ViewModel(){
         roomsFragment.roomChange()
     }
 
-    fun itemClicked(p0: MenuItem?, roomsFragment: RoomsFragment) {
-        if ((currentRoom.roomName == "Dragon!") && (p0?.itemId != R.id.use_sword)) {
-            roomsFragment.onLoss()
-        } else if (p0?.itemId == R.id.pick_treasure) {
-            roomsFragment.onVictory()
-        } else if (p0?.itemId == R.id.pick_torch) {
-            pick(Item.torch)
-        } else if (p0?.itemId == R.id.pick_sword) {
-            pick(Item.sword)
-        } else if (p0?.itemId == R.id.pick_firelock) {
-            pick(Item.firelock)
-        } else if (p0?.itemId == R.id.use_flaming_torch) {
-            if (currentRoom.roomName == "Cave entrance"){
-                currentRoom.description="This is the entrance to the legendary Great Cave of Monderong."
-                currentRoom.north = rooms.getCave()
-            }
-        } else if (p0?.itemId == R.id.use_firelock) {
-            if (items.contains(Item.torch)) {
-                items.remove(Item.firelock)
-                items.remove(Item.torch)
-                items.add(Item.flaming_torch)
-            }
-        } else if (p0?.itemId == R.id.use_sword) {
-            if (currentRoom.roomName == "Dragon!") {
-                currentRoom = rooms.killedDragon()
-            }
+    fun useClicked(p0: MenuItem?, roomsFragment: RoomsFragment) {
+        if (currentRoom.roomName == roomsFragment.getString(R.string.dragon)) {
+                if (p0?.itemId == R.id.use_sword) {
+                    roomsFragment.onVictory()
+                } else {
+                    roomsFragment.onLoss()
+                }
+        } else if (p0?.itemId == R.id.use_flaming_torch
+                   && currentRoom.roomName == roomsFragment.getString(R.string.caveEntrance)) {
+            currentRoom.description=roomsFragment.getString(R.string.caveEntranceDescription2)
+            currentRoom.north = rooms.getCave()
+        } else if (p0?.itemId == R.id.use_firelock && items.contains(Item.torch)) {
+            items.remove(Item.firelock)
+            items.remove(Item.torch)
+            items.add(Item.flaming_torch)
+        }
+        roomsFragment.roomChange()
+    }
+
+    fun pickClicked(p0: MenuItem?, roomsFragment: RoomsFragment) {
+        when {
+            currentRoom.roomName == roomsFragment.getString(R.string.dragon) -> roomsFragment.onLoss()
+            p0?.itemId == R.id.pick_treasure -> roomsFragment.onVictory()
+            p0?.itemId == R.id.pick_torch -> pick(Item.torch)
+            p0?.itemId == R.id.pick_sword -> pick(Item.sword)
+            p0?.itemId == R.id.pick_firelock -> pick(Item.firelock)
         }
         roomsFragment.roomChange()
 
