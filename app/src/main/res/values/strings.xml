@@ -67,4 +67,11 @@
     <string name="lostForestDescription">You are kinda lost in this forest, aren\'t you?</string>
     <string name="caveEntranceDescription2">This is the entrance to the legendary Great Cave of Monderong.</string>
 
+    <!-- toast messages -->
+    <string name="noUse">There is no use for this item right now.</string>
+    <string name="firelockUsed">You lid up the torch using the firelock.</string>
+    <string name="flamingTorchUsed">You may go in with the flaming torch.</string>
+    <string name="swordUsed">After a long battle, you finally slayed the dragon!</string>
+    <string name="pickup">You\'ve picked up \ </string>
+
 </resources>

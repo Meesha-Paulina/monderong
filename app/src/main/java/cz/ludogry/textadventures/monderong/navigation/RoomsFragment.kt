@@ -8,6 +8,7 @@ import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -17,15 +18,8 @@ import cz.ludogry.textadventures.monderong.databinding.RoomsFragmentBinding
 import cz.ludogry.textadventures.monderong.game.Item
 
 class RoomsFragment : Fragment() {
-    val useListener = UseListener(this)
-    val pickListener = PickListener(this)
 
-    companion object {
-        fun newInstance() = RoomsFragment()
-    }
-
-    // TODO private
-    lateinit var viewModel: RoomsViewModel
+    private lateinit var viewModel: RoomsViewModel
 
     private lateinit var binding: RoomsFragmentBinding
 
@@ -36,11 +30,10 @@ class RoomsFragment : Fragment() {
         binding = DataBindingUtil
             .inflate(inflater, R.layout.rooms_fragment, container, false)
 
-
         return binding.root
     }
 
-    fun hideDirections(binding: RoomsFragmentBinding) {
+    private fun hideDirections(binding: RoomsFragmentBinding) {
         binding.north.visibility = if (viewModel.north()) VISIBLE else INVISIBLE
         binding.east.visibility = if (viewModel.east()) VISIBLE else INVISIBLE
         binding.south.visibility = if (viewModel.south()) VISIBLE else INVISIBLE
@@ -72,7 +65,9 @@ class RoomsFragment : Fragment() {
     private fun showUseMenu(button: View?) {
         val useMenu = PopupMenu(this.activity, button)
 
-        useMenu.setOnMenuItemClickListener(this.useListener)
+        useMenu.setOnMenuItemClickListener{
+            viewModel.useClicked(it, this)
+        }
         useMenu.inflate(R.menu.use_menu)
         useMenu.menu.findItem(R.id.use_nothing).isVisible = viewModel.items.isEmpty()
         useMenu.menu.findItem(R.id.use_firelock).isVisible = viewModel.items.contains(Item.firelock)
@@ -85,7 +80,9 @@ class RoomsFragment : Fragment() {
 
     private fun showPickMenu(button: View?) {
         val pickMenu = PopupMenu(this.activity, button)
-        pickMenu.setOnMenuItemClickListener(this.pickListener)
+        pickMenu.setOnMenuItemClickListener{
+            viewModel.pickClicked(it, this)
+        }
         pickMenu.inflate(R.menu.pick_menu)
         pickMenu.menu.findItem(R.id.pick_nothing).isVisible = viewModel.currentRoom.items.isEmpty()
         pickMenu.menu.findItem(R.id.pick_firelock).isVisible = viewModel.currentRoom.items.contains(Item.firelock)
@@ -115,20 +112,12 @@ class RoomsFragment : Fragment() {
             showUseMenu(button)
         }
     }
-}
 
-class UseListener (val fragment: RoomsFragment): PopupMenu.OnMenuItemClickListener {
-    override fun onMenuItemClick(p0: MenuItem?): Boolean {
-        fragment.viewModel.useClicked(p0, fragment)
-        return true
+    fun showMessage(message: String) {
+        Toast.makeText(
+            this.requireContext(),
+            message,
+            Toast.LENGTH_LONG).show()
+
     }
-
-}
-
-class PickListener (val fragment: RoomsFragment): PopupMenu.OnMenuItemClickListener {
-    override fun onMenuItemClick(p0: MenuItem?): Boolean {
-        fragment.viewModel.pickClicked(p0, fragment)
-        return true
-    }
-
 }

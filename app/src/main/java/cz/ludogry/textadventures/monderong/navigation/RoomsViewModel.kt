@@ -55,10 +55,11 @@ class RoomsViewModel : ViewModel(){
         roomsFragment.roomChange()
     }
 
-    fun useClicked(p0: MenuItem?, roomsFragment: RoomsFragment) {
+    fun useClicked(p0: MenuItem?, roomsFragment: RoomsFragment): Boolean {
         if (currentRoom.roomName == roomsFragment.getString(R.string.dragon)) {
                 if (p0?.itemId == R.id.use_sword) {
-                    roomsFragment.onVictory()
+                    currentRoom = rooms.killedDragon()
+                    roomsFragment.showMessage(roomsFragment.getString(R.string.swordUsed))
                 } else {
                     roomsFragment.onLoss()
                 }
@@ -66,24 +67,40 @@ class RoomsViewModel : ViewModel(){
                    && currentRoom.roomName == roomsFragment.getString(R.string.caveEntrance)) {
             currentRoom.description=roomsFragment.getString(R.string.caveEntranceDescription2)
             currentRoom.north = rooms.getCave()
+            roomsFragment.showMessage(roomsFragment.getString(R.string.flamingTorchUsed))
         } else if (p0?.itemId == R.id.use_firelock && items.contains(Item.torch)) {
             items.remove(Item.firelock)
             items.remove(Item.torch)
             items.add(Item.flaming_torch)
+            roomsFragment.showMessage(roomsFragment.getString(R.string.firelockUsed))
+        } else if (p0?.itemId != R.id.use_nothing){
+            roomsFragment.showMessage(roomsFragment.getString(R.string.noUse))
         }
         roomsFragment.roomChange()
+        return true
     }
 
-    fun pickClicked(p0: MenuItem?, roomsFragment: RoomsFragment) {
+    fun pickClicked(p0: MenuItem?, roomsFragment: RoomsFragment): Boolean {
         when {
             currentRoom.roomName == roomsFragment.getString(R.string.dragon) -> roomsFragment.onLoss()
-            p0?.itemId == R.id.pick_treasure -> roomsFragment.onVictory()
-            p0?.itemId == R.id.pick_torch -> pick(Item.torch)
-            p0?.itemId == R.id.pick_sword -> pick(Item.sword)
-            p0?.itemId == R.id.pick_firelock -> pick(Item.firelock)
+            p0?.itemId == R.id.pick_treasure -> {
+                roomsFragment.onVictory()
+            }
+            p0?.itemId == R.id.pick_torch -> {
+                roomsFragment.showMessage(roomsFragment.getString(R.string.pickup) + roomsFragment.getString(R.string.torch))
+                pick(Item.torch)
+            }
+            p0?.itemId == R.id.pick_sword -> {
+                roomsFragment.showMessage(roomsFragment.getString(R.string.pickup) + roomsFragment.getString(R.string.sword))
+                pick(Item.sword)
+            }
+            p0?.itemId == R.id.pick_firelock -> {
+                roomsFragment.showMessage(roomsFragment.getString(R.string.pickup) + roomsFragment.getString(R.string.firelock))
+                pick(Item.firelock)
+            }
         }
         roomsFragment.roomChange()
-
+        return true
     }
 
     private fun pick(theItem: Item) {
