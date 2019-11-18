@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/victory_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/helpHeader"
+            style="@style/menuHeader"
+            android:text="@string/help"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/helpDescription"
+            style="@style/roomDescription"
+            app:layout_constraintTop_toBottomOf="@id/helpHeader"
+            app:layout_constraintBottom_toTopOf="@+id/helpBackToMenu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/theHelp"/>
+
+        <Button
+            android:id="@+id/helpBackToMenu"
+            style="@style/menuButton"
+            android:text="@string/backToMenu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/helpDescription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

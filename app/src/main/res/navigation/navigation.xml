@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigationFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigationFragment"
     app:startDestination="@id/mainMenuFragment">
 
     <fragment
@@ -10,6 +12,9 @@
         <action
             android:id="@+id/action_mainMenuFragment_to_roomsFragment"
             app:destination="@id/roomsFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
     </fragment>
     <fragment
         android:id="@+id/roomsFragment"
@@ -39,6 +44,15 @@
             app:destination="@id/roomsFragment" />
         <action
             android:id="@+id/action_gameOverFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="cz.ludogry.textadventures.monderong.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" >
+        <action
+            android:id="@+id/action_helpFragment_to_mainMenuFragment"
             app:destination="@id/mainMenuFragment" />
     </fragment>
 </navigation>

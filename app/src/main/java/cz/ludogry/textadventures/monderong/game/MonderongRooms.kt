@@ -4,16 +4,18 @@ import android.content.Context
 import cz.ludogry.textadventures.monderong.R
 
 class MonderongRooms {
-    var rooms = arrayListOf<Room>()
+    var importantRooms = HashMap<Int, Room>()
+
     fun initRooms(context: Context): Room {
 
+        // rooms named by their position on an xy map
         val start = Room()
         val a5=Room()
-        val b3=Room()
+        val b3=CaveEntrance()
         val b4=Room()
         val b5=Room()
 
-        val b6=Room()             // room with dragon
+        val b6=DragonRoom()             // room with dragon
         val b62=Room()            // room with killed dragon
 
         val b7=Room()
@@ -25,6 +27,7 @@ class MonderongRooms {
         val d1=Room()
         val d2=Room()
         val d3=Room()
+
         start.roomName = context.getString(R.string.forest)
         start.description = context.getString(R.string.startDescription)
         start.north = c3
@@ -35,13 +38,14 @@ class MonderongRooms {
         a5.east = b5
 
         b3.roomName = context.getString(R.string.caveEntrance)
-        b3.description= context.getString(R.string.entranceDescription)
+        b3.description = context.getString(R.string.entranceDescription)
         b3.east=c3
 
         b4.roomName = context.getString(R.string.cave)
         b4.description = context.getString(R.string.firstCaveDescription)
         b4.south=b3
         b4.north=b5
+        importantRooms[R.string.cave] = b4
 
         b5.roomName = context.getString(R.string.crossroad)
         b5.description = context.getString(R.string.crossroadDescription)
@@ -57,6 +61,7 @@ class MonderongRooms {
         b62.description = context.getString(R.string.deadDragonDescription)
         b62.north=b7
         b62.south=b5
+        importantRooms[R.string.deadDragon] = b62
 
         b7.roomName = context.getString(R.string.stinkyCave)
         b7.description = context.getString(R.string.stinkyCaveDescription)
@@ -106,38 +111,18 @@ class MonderongRooms {
         d3.south=d2
         d3.west=c3
 
-        rooms.add(start)
-        rooms.add(a5)
-        rooms.add(b3)
-        rooms.add(b4)
-        rooms.add(b5)
-
-        rooms.add(b6)            // room with dragon
-        rooms.add(b62)           // room with killed dragon
-
-        rooms.add(b7)
-        rooms.add(b8)
-        rooms.add(c3)
-        rooms.add(c5)
-        rooms.add(c7)
-        rooms.add(c8)
-        rooms.add(d1)
-        rooms.add(d2)
-        rooms.add(d3)
-
         return start
     }
 
     fun getCave(): Room {
-        return rooms[3]
+        return importantRooms[R.string.cave]!!
     }
 
     fun killedDragon(): Room {
-        val killedDragonRoom = rooms[6]
+        val killedDragonRoom = importantRooms[R.string.deadDragon]!!
         killedDragonRoom.south?.north = killedDragonRoom
         killedDragonRoom.north?.south = killedDragonRoom
         return killedDragonRoom
     }
-
 
 }

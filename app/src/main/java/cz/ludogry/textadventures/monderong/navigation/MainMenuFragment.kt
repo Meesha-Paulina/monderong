@@ -21,6 +21,9 @@ class MainMenuFragment : Fragment() {
         binding.startButton.setOnClickListener (
             Navigation.createNavigateOnClickListener(R.id.action_mainMenuFragment_to_roomsFragment)
         )
+        binding.buttonHelp.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_mainMenuFragment_to_helpFragment)
+        )
         binding.buttonExit.setOnClickListener {
             activity?.finish()
         }
