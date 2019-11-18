@@ -7,6 +7,9 @@ import cz.ludogry.textadventures.monderong.game.Item
 import cz.ludogry.textadventures.monderong.game.MonderongRooms
 import cz.ludogry.textadventures.monderong.game.Room
 
+/**
+ * This model mainly contains the current position and items.
+ */
 class RoomsViewModel : ViewModel(){
 
     var rooms = MonderongRooms()

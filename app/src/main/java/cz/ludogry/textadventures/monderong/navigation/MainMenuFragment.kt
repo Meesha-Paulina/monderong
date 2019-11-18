@@ -10,9 +10,14 @@ import androidx.navigation.Navigation
 import cz.ludogry.textadventures.monderong.R
 import cz.ludogry.textadventures.monderong.databinding.MainMenuFragmentBinding
 
+/**
+ * Fragment with main menu. Contains buttons for game start, help and exit.
+ */
 class MainMenuFragment : Fragment() {
 
-
+    /**
+     * Initiates the binding and inflates the fragment.
+     */
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding: MainMenuFragmentBinding = DataBindingUtil

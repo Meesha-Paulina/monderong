@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/helpFragment"
-        android:name="cz.ludogry.textadventures.monderong.HelpFragment"
+        android:name="cz.ludogry.textadventures.monderong.navigation.HelpFragment"
         android:label="fragment_help"
         tools:layout="@layout/fragment_help" >
         <action

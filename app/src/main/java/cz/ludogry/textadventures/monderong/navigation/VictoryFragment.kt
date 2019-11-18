@@ -10,11 +10,17 @@ import androidx.navigation.Navigation
 import cz.ludogry.textadventures.monderong.R
 import cz.ludogry.textadventures.monderong.databinding.FragmentVictoryBinding
 
+/**
+ * Fragment showing victory message. Contains one button - return to main menu.
+ */
 class VictoryFragment : Fragment() {
 
     private lateinit var binding: FragmentVictoryBinding
 
-        override fun onCreateView(
+    /**
+     * Initiates the binding and inflates the fragment.
+     */
+    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {

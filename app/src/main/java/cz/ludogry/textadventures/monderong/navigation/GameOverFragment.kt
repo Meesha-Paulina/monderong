@@ -10,10 +10,16 @@ import androidx.navigation.Navigation
 import cz.ludogry.textadventures.monderong.R
 import cz.ludogry.textadventures.monderong.databinding.FragmentGameOverBinding
 
+/**
+ * A fragment that shows game over message and has two buttons - to return to main menu and to restart.
+ */
 class GameOverFragment : Fragment() {
 
     private lateinit var binding: FragmentGameOverBinding
 
+    /**
+     * Initiates the binding and inflates the fragment.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

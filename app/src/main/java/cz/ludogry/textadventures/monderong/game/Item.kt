@@ -1,9 +1,12 @@
 package cz.ludogry.textadventures.monderong.game
 
-enum class Item() {
-    torch,
-    firelock,
-    sword,
-    flaming_torch,
-    treasure
+/**
+ * All the items in this game
+ */
+enum class Item {
+    TORCH,
+    FIRELOCK,
+    SWORD,
+    FLAMING_TORCH,
+    TREASURE
 }

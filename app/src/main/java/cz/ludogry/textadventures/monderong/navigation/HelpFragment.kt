@@ -1,4 +1,4 @@
-package cz.ludogry.textadventures.monderong
+package cz.ludogry.textadventures.monderong.navigation
 
 
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
+import cz.ludogry.textadventures.monderong.R
 import cz.ludogry.textadventures.monderong.databinding.FragmentHelpBinding
 
 /**
@@ -17,12 +18,16 @@ class HelpFragment : Fragment() {
 
     private lateinit var binding: FragmentHelpBinding
 
+    /**
+     * Initiates the binding and inflates the fragment.
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil
-            .inflate(inflater, R.layout.fragment_help, container, false)
+            .inflate(inflater,
+                R.layout.fragment_help, container, false)
 
         binding.helpBackToMenu.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_helpFragment_to_mainMenuFragment)
